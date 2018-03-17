@@ -1,0 +1,34 @@
+<mat-card>
+  <mat-card-header>
+    <div mat-card-avatar></div>
+    <mat-card-title>{{product.name}}</mat-card-title>
+    <mat-card-subtitle>{{product.description}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <section class="product-section">
+      <div><span>Choose size</span></div>
+      <mat-radio-group [(ngModel)]="selectedSize">
+        <mat-radio-button
+          *ngFor="let size of product.sizes;"
+          [value]="size"
+          class="product-radio-button">
+          {{size | uppercase}}
+        </mat-radio-button>
+      </mat-radio-group>
+    </section>
+    <section class="product-section">
+      <div><span>Choose color</span></div>
+      <mat-radio-group [(ngModel)]="selectedColor">
+        <mat-radio-button
+          *ngFor="let color of product.colors;"
+          [value]="color"
+          class="product-radio-button">
+          {{color}}
+        </mat-radio-button>
+      </mat-radio-group>
+    </section>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button (click)="onBuy()" [disabled]="!isEnabled">Buy</button>
+  </mat-card-actions>
+</mat-card>
