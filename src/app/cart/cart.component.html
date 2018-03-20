@@ -1,0 +1,9 @@
+<div *ngIf="hasProducts; else elseBlock">
+  <h4>Cart</h4>
+  <app-order-list></app-order-list>
+</div>
+<ng-template #elseBlock>
+  <div>
+    The Cart is Empty
+  </div>
+</ng-template>

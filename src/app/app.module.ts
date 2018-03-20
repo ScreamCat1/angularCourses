@@ -1,44 +1,34 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
-import { MatListModule } from '@angular/material/list';
-import { MatRadioModule } from '@angular/material/radio';
+import { CartModule } from './cart/cart.module';
+import { MaterialModule } from './shared/material.module';
+import { OrdersModule } from './orders/orders.module';
+import { ProductsModule } from './products/products.module';
 
-import { CartService } from './cart/shared/cart.service';
-import { ProductService } from './products/shared/product.service';
-
+// import { CartService } from './cart/shared/cart.service';
 
 import { AppComponent } from './app.component';
-import { ProductComponent } from './products/product/product.component';
-import { ProductListComponent } from './products/product-list/product-list.component';
-import { CartComponent } from './cart/cart/cart.component';
+// import { CartComponent } from './cart/cart/cart.component';
+// import { CartListComponent } from './cart/cart-list/cart-list/cart-list.component';
+// import { OrderComponent } from './orders/order/order/order.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductComponent,
-    ProductListComponent,
-    CartComponent
+    // CartListComponent,
+    // OrderComponent
   ],
   imports: [
-    FormsModule,
     BrowserModule,
     BrowserAnimationsModule,
 
-    MatButtonModule,
-    MatCardModule,
-    MatListModule,
-    MatRadioModule
+    CartModule,
+    OrdersModule,
+    ProductsModule
   ],
-  providers: [
-    ProductService,
-    CartService
-  ],
-  bootstrap: [AppComponent]
+   bootstrap: [AppComponent]
 })
 export class AppModule { }

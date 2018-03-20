@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ProductService } from '../shared/product.service';
-import { CartService } from '../../cart/shared/cart.service';
+import { OrdersService } from '../../orders/shared/orders.service';
 
 import { Product } from '../products';
 
@@ -15,12 +15,12 @@ products: Array<Product>;
 
   constructor(
     private productService: ProductService,
-    private cartService: CartService) {}
+    private ordersService: OrdersService) {}
 
   ngOnInit() {
     this.products = this.productService.getProducts();
   }
   addProduct(product) {
-    this.cartService.addProduct(product);
+    this.ordersService.addProduct(product);
   }
 }

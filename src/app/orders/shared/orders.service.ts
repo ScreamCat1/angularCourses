@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { SelectedProduct } from '../../products/products';
 
 @Injectable()
-export class CartService {
+export class OrdersService {
   private selectedProducts: Array<SelectedProduct> = [];
 
   get allProducts(): Array<SelectedProduct> {
