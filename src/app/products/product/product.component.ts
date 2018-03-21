@@ -24,7 +24,7 @@ export class ProductComponent {
   }
 
   get isEnabled(): boolean {
-    return !!this.selectedColor && !!this.selectedSize;
+    return this.product.isAvailable && !!this.selectedColor && !!this.selectedSize;
   }
 
 }

@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { MaterialModule } from '../shared/material.module';
+import { SharedModule } from '../shared/shared.module';
 
 import { OrdersModule } from '../orders/orders.module';
 
-import { CartComponent } from './cart.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   imports: [
