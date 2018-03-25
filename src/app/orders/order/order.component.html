@@ -1,6 +1,7 @@
-<mat-card (click)="deleteSelectedProduct(product)">
+<mat-card appActiveblock (click)="openDialog()">
     <mat-card-header>
       {{product.name}}
+      <button (click)="deleteSelectedProduct(product)">X</button>
     </mat-card-header>
     <mat-card-content>
       <p>Color: <span>{{product.selectedColor}}</span></p>

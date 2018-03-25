@@ -1,9 +1,17 @@
 <div *ngIf="hasProducts; else elseBlock">
   <h4>Cart</h4>
+  <div>
+    All products:
+    <span class="paroduct-coutn">{{numberOfProduct}}</span>
+  </div>
+  <div>
+    All price:
+    <span class="product-price">{{summaryPrice | convertPrice}}</span>
+  </div>
   <app-order-list></app-order-list>
 </div>
 <ng-template #elseBlock>
-  <div>
+  <div #elseWrapper>
     The Cart is Empty
   </div>
 </ng-template>

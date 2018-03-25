@@ -9,12 +9,11 @@ export class OrdersService {
     return this.selectedProducts;
   }
 
-  deleteProduct(product: SelectedProduct): void {
-    this.selectedProducts = this.selectedProducts.filter((p) => p.id !== product.id);
+  addProduct(product: SelectedProduct): void {
+    this.selectedProducts.push(product);
   }
 
-  addProduct(product: SelectedProduct): void {
-    console.log(product);
-    this.selectedProducts.push(product);
+  deleteProduct(product: SelectedProduct): void {
+    this.selectedProducts = this.selectedProducts.filter((p) => p.id !== product.id);
   }
 }

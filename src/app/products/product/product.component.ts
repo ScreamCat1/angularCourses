@@ -11,8 +11,9 @@ export class ProductComponent {
   @Input()product: SelectedProduct;
   @Output() addProduct = new EventEmitter();
 
-  selectedColor: string;
   selectedSize: string;
+  selectedColor: string;
+
   onBuy(product) {
     this.addProduct.emit({
       ...this.product,
@@ -25,6 +26,10 @@ export class ProductComponent {
 
   get isEnabled(): boolean {
     return this.product.isAvailable && !!this.selectedColor && !!this.selectedSize;
+  }
+
+  get isAviable(): boolean {
+    return this.product.isAvailable;
   }
 
 }

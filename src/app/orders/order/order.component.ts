@@ -1,7 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { OrdersService } from '../shared/orders.service';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 
+import { OrdersService } from '../shared/orders.service';
+import { CartItemComponent } from '../../cart/cart-item/cart-item.component';
 import { SelectedProduct } from '../../products/products';
 
 @Component({
@@ -13,7 +15,9 @@ export class OrderComponent implements OnInit {
   @Input()product: SelectedProduct;
   products: Array<SelectedProduct>;
 
-  constructor( private ordersService: OrdersService) {}
+  constructor(
+    private ordersService: OrdersService,
+    public dialog: MatDialog) {}
 
   ngOnInit() {
     this.products = this.ordersService.allProducts;
@@ -26,4 +30,17 @@ export class OrderComponent implements OnInit {
   deleteSelectedProduct(selectedProduct: SelectedProduct): void {
     this.products.splice(this.products.indexOf(selectedProduct), 1);
   }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(CartItemComponent, {
+      width: '450px',
+      data: this.product
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.product.selectedColor = result;
+    });
+  }
+
+
 }

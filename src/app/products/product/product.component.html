@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card [ngClass]="{'not-aviable': !isAviable}">
   <mat-card-header>
     <div mat-card-avatar></div>
     <mat-card-title>{{product.name}}</mat-card-title>
@@ -30,9 +30,6 @@
     </section>
   </mat-card-content>
   <mat-card-actions>
-    <span matTooltip="Tooltip!" matTooltipPosition="above">
-        <button mat-raised-button (click)="onBuy()" [disabled]="!isEnabled">Buy</button>
-    </span>
+      <button mat-raised-button (click)="onBuy()" [disabled]="!isEnabled">Buy</button>
   </mat-card-actions>
 </mat-card>
-<span matTooltip="Tooltip!" matTooltipPosition="above">sdasdasd</span>

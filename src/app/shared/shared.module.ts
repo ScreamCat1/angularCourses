@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { MaterialModule } from './angular-material/material.module';
 import { ConvertPricePipe } from './pipes/convert-price.pipe';
+import { ActiveblockDirective } from './directives/activeblock.directive';
 
 @NgModule({
   imports: [
@@ -10,9 +11,11 @@ import { ConvertPricePipe } from './pipes/convert-price.pipe';
 
     MaterialModule
   ],
-  declarations: [ConvertPricePipe],
+  declarations: [ActiveblockDirective, ConvertPricePipe, ActiveblockDirective],
   exports: [
     MaterialModule,
+
+    ActiveblockDirective,
 
     ConvertPricePipe
   ]

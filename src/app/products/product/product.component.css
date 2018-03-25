@@ -5,3 +5,7 @@
 .product-radio-button {
   margin-right: 20px;
 }
+
+.not-aviable {
+  background-color: lightgray;
+}
