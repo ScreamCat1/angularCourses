@@ -28,6 +28,12 @@
         </mat-radio-button>
       </mat-radio-group>
     </section>
+    <section class="product-section">
+    <span>Choose quantity</span>
+      <mat-form-field>
+        <input matInput placeholder="Enter quantity" type="number"[(ngModel)]="selectedQuantity">
+      </mat-form-field>
+    </section>
   </mat-card-content>
   <mat-card-actions>
       <button mat-raised-button (click)="onBuy()" [disabled]="!isEnabled">Buy</button>

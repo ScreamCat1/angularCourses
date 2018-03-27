@@ -10,7 +10,7 @@ export class CartService {
   }
 
   summaryPrice(products: Array<SelectedProduct>) {
-    return products.reduce((prevSummary, product) => prevSummary + product.price, 0);
+    return products.reduce((prevSummary, product) => prevSummary + product.price * product.quantity, 0);
   }
 
 }

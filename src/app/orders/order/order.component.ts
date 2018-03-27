@@ -38,7 +38,9 @@ export class OrderComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      this.product.selectedColor = result;
+      result > 0
+      ? this.product.quantity = result
+      : this.deleteSelectedProduct(this.product);
     });
   }
 

@@ -13,12 +13,14 @@ export class ProductComponent {
 
   selectedSize: string;
   selectedColor: string;
+  selectedQuantity = 1;
 
   onBuy(product) {
     this.addProduct.emit({
       ...this.product,
       selectedColor: this.selectedColor,
-      selectedSize: this.selectedSize
+      selectedSize: this.selectedSize,
+      quantity: this.selectedQuantity
     });
 
     console.log(`Product '${this.product.name}' was bought`);

@@ -11,7 +11,11 @@ import { ActiveblockDirective } from './directives/activeblock.directive';
 
     MaterialModule
   ],
-  declarations: [ActiveblockDirective, ConvertPricePipe, ActiveblockDirective],
+  declarations: [
+    ConvertPricePipe,
+
+    ActiveblockDirective
+  ],
   exports: [
     MaterialModule,
 

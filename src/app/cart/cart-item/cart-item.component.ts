@@ -10,14 +10,14 @@ import { SelectedProduct } from './../../products/models/products';
   styleUrls: ['./cart-item.component.css']
 })
 export class CartItemComponent implements OnInit {
-value: string;
+value: number;
 
 constructor(
   private dialogRef: MatDialogRef<CartItemComponent>,
   @Inject(MAT_DIALOG_DATA) public data: SelectedProduct) { }
 
   ngOnInit() {
-    this.value = this.data.selectedColor;
+    this.value = this.data.quantity;
   }
 
   onNoClick(): void {

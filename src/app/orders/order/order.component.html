@@ -6,5 +6,7 @@
     <mat-card-content>
       <p>Color: <span>{{product.selectedColor}}</span></p>
       <p>Size: <span>{{product.selectedSize}}</span></p>
+      <p>Price: <span>{{product.price | convertPrice}}</span></p>
+      <p>Price: <span>{{product.quantity * product.price | convertPrice}} for {{product.quantity}} items</span></p>
     </mat-card-content>
   </mat-card>

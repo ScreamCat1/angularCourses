@@ -3,6 +3,7 @@ import { Product, ProductCategoryType } from './product.model';
 export interface SelectedProduct extends Product {
   selectedColor: string;
   selectedSize: string;
+  quantity: number;
 }
 
 export const products: Array<Product> = [
