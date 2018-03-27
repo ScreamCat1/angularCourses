@@ -4,10 +4,10 @@ import { FormsModule } from '@angular/forms';
 
 import { SharedModule } from './../shared/shared.module';
 
-import { ProductComponent } from './product/product.component';
-import { ProductListComponent } from './product-list/product-list.component';
+import { ProductComponent } from './components/product/product.component';
+import { ProductListComponent } from './components/product-list/product-list.component';
 
-import { ProductService } from './shared/product.service';
+import { ProductService } from './services/product.service';
 
 @NgModule({
   imports: [
