@@ -15,4 +15,4 @@ export class GeneratorService {
 
 export let GeneratorFactory = () => {
   return new GeneratorService(Math.round(Math.random() * 10));
-}
+};

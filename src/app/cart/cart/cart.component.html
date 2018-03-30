@@ -1,6 +1,9 @@
 <div *ngIf="hasProducts; else elseBlock">
   <h4>Cart</h4>
   <div>
+    <button (click)="clearProducts()">Clear Cart</button>
+  </div>
+  <div>
     All products:
     <span class="paroduct-coutn">{{numberOfProduct}}</span>
   </div>

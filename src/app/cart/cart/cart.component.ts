@@ -33,4 +33,8 @@ export class CartComponent implements OnInit, AfterViewInit {
     return this.cartService.summaryPrice(this.ordersService.allProducts);
   }
 
+  clearProducts(): void {
+    this.ordersService.clearProducts();
+  }
+
 }

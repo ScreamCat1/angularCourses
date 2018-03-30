@@ -13,6 +13,10 @@ export class OrdersService {
     this.selectedProducts.push(product);
   }
 
+  clearProducts(): void {
+    this.selectedProducts = [];
+  }
+
   deleteProduct(product: SelectedProduct): void {
     this.selectedProducts = this.selectedProducts.filter((p) => p.id !== product.id);
   }

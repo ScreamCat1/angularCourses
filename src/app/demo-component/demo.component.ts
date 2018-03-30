@@ -24,7 +24,7 @@ export class DemoComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.localStorageService.setItem('some', 'value from some');
+    this.localStorageService.setItem('some', 'value from localStorage');
     this.value = localStorage.getItem('some');
     this.randomString = this.generatorService.randomSring;
     this.configOptionsService.id = 1;
