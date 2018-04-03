@@ -1,8 +1,9 @@
+import { Component, OnInit, Optional, Inject } from '@angular/core';
+
 import { GeneratorService } from './../core/services/generator.service';
-import { ConstantService } from './../core/services/constant.service';
+import { CONSTANT_SERVICE, CONST } from './../core/services/constant.service';
 import { LocalStorageService } from './../core/services/local-storage.service';
 import { ConfigOptionsService } from './../core/services/config-options.service';
-import { Component, OnInit, Optional } from '@angular/core';
 
 
 
@@ -19,7 +20,7 @@ export class DemoComponent implements OnInit {
   constructor(
     private configOptionsService: ConfigOptionsService,
     private localStorageService: LocalStorageService,
-    @Optional() private constantService: ConstantService,
+    @Inject(CONSTANT_SERVICE) constantService: CONST,
     @Optional() private generatorService: GeneratorService
   ) {}
 

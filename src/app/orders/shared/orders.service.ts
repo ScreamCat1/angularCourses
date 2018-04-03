@@ -1,3 +1,4 @@
+import { products } from './../../products/models/products';
 import { Injectable } from '@angular/core';
 import { SelectedProduct } from '../../products/models/products';
 
@@ -7,6 +8,10 @@ export class OrdersService {
 
   get allProducts(): Array<SelectedProduct> {
     return this.selectedProducts;
+  }
+
+  set allProducts(p: Array<SelectedProduct>) {
+    this.selectedProducts = p;
   }
 
   addProduct(product: SelectedProduct): void {

@@ -1,6 +1,6 @@
 <section>
   <app-product
-    *ngFor="let product of products"
+    *ngFor="let product of products | async"
     [product]="product"
     (addProduct)="addProduct($event)">
   </app-product>

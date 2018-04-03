@@ -5,6 +5,7 @@ import { MaterialModule } from './angular-material/material.module';
 import { ConvertPricePipe } from './pipes/convert-price.pipe';
 import { ActiveblockDirective } from './directives/activeblock.directive';
 import { FocusBlockDirective } from './directives/focus-block.directive';
+import { OrderByPipe } from './pipes/order-by.pipe';
 
 @NgModule({
   imports: [
@@ -14,6 +15,7 @@ import { FocusBlockDirective } from './directives/focus-block.directive';
   ],
   declarations: [
     ConvertPricePipe,
+    OrderByPipe,
 
     ActiveblockDirective,
     FocusBlockDirective
@@ -24,7 +26,8 @@ import { FocusBlockDirective } from './directives/focus-block.directive';
     ActiveblockDirective,
     FocusBlockDirective,
 
-    ConvertPricePipe
+    ConvertPricePipe,
+    OrderByPipe
   ]
 })
 export class SharedModule { }

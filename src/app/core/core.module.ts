@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { ConfigOptionsService } from './services/config-options.service';
 import { LocalStorageService } from './services/local-storage.service';
-import { ConstantService } from './services/constant.service';
+import { CONSTANT_SERVICE, ConstantValue } from './services/constant.service';
 import { GeneratorFactory, GeneratorService } from './services/generator.service';
 
 @NgModule({
@@ -13,7 +13,7 @@ import { GeneratorFactory, GeneratorService } from './services/generator.service
   providers: [
     ConfigOptionsService,
     LocalStorageService,
-    { provide: ConstantService, useValue:  { App: 'TaskManager', Ver: '1.0' }},
+    { provide: CONSTANT_SERVICE, useValue:  ConstantValue },
     { provide: GeneratorService, useFactory: GeneratorFactory}
   ]
 })
