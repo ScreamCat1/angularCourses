@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 
 import { CartService } from './../shared/cart.service';
 import { OrdersService } from './../../orders/shared/orders.service';
@@ -8,17 +8,30 @@ import { OrdersService } from './../../orders/shared/orders.service';
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css']
 })
-export class CartComponent implements OnInit, AfterViewInit {
-@ViewChild('elseWrapper') elseWrapper: ElementRef;
+export class CartComponent implements AfterViewInit {
+  orderName = 'name';
+  orderDirection = true;
+
+  private directions = {
+    'name': false,
+    'price': false,
+    'quentity': false
+  };
+
+  @ViewChild('elseWrapper') elseWrapper: ElementRef;
   constructor(
     private cartService: CartService,
     private ordersService: OrdersService,
-  ) { }
-
-  ngOnInit() {}
+  ) {}
 
   ngAfterViewInit() {
     this.elseWrapper.nativeElement.style.fontWeight = 'bold';
+  }
+
+  onClick({ target: { innerText }  }): void {
+    this.orderName = innerText.toLowerCase();
+    this.orderDirection = this.directions[innerText];
+    this.directions[innerText] = !this.directions[innerText];
   }
 
   get hasProducts(): boolean {

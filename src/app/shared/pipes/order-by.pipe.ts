@@ -4,12 +4,12 @@ import { SelectedProduct } from './../../products/models/products';
 import { OrdersService } from './../../orders/shared/orders.service';
 
 @Pipe({
-  name: 'orderBy'
+  name: 'orderBy',
+  pure: false
 })
 export class OrderByPipe implements PipeTransform {
   transform(list: Array<SelectedProduct>, orderName: string, orderDirection: boolean = false): any {
-    let a = list.sort((a, b) => {
-      console.log(a, b)
+    const newArr = list.sort((a, b) => {
       if (a[orderName] > b[orderName]) {
         return 1;
       } if (a[orderName] < b[orderName]) {
@@ -18,8 +18,6 @@ export class OrderByPipe implements PipeTransform {
       return 0;
     });
 
-    console.log(a);
-    return list;
+    return orderDirection ? newArr : newArr.reverse();
   }
-
 }

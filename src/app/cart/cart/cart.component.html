@@ -13,9 +13,11 @@
   </div>
   <div>
     Sorted:
-    <button>name</button>
+    <button (click)="onClick($event)">name</button>
+    <button (click)="onClick($event)">Price</button>
+    <button (click)="onClick($event)">Quentity</button>
   </div>
-  <app-order-list></app-order-list>
+  <app-order-list [orderName]="orderName" [orderDirection]="orderDirection"></app-order-list>
 </div>
 <ng-template #elseBlock>
   <div #elseWrapper>
