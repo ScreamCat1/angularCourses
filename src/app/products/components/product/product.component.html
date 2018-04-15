@@ -1,7 +1,9 @@
-<mat-card [ngClass]="{'not-aviable': !isAviable}" appFocusBlock borderColor="blue">
-  <mat-card-header>
+<mat-card [ngClass]="{'not-aviable': !isAviable}" >
+  <mat-card-header appActiveblock (click)="navigateToProductInfo()" class="product-link">
     <div mat-card-avatar></div>
-    <mat-card-title>{{product.name}}</mat-card-title>
+    <mat-card-title >
+      {{product.name}}
+    </mat-card-title>
     <mat-card-subtitle>{{product.description}}</mat-card-subtitle>
     <mat-card-subtitle>{{product.price | convertPrice}}</mat-card-subtitle>
   </mat-card-header>

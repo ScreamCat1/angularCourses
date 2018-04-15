@@ -9,3 +9,7 @@
 .not-aviable {
   background-color: lightgray;
 }
+
+.product-link {
+  cursor: pointer;
+}

@@ -1,0 +1,17 @@
+<div>
+  <form class="cart-form" (ngSubmit)="sendOrder()" #form="ngForm">
+    <p class="cart-form_field">
+      <span>Your name:</span>
+      <input type="text" required [(ngModel)]="user.name" name="name" class="cart-form_input" placeholder="enter your name">
+    </p>
+    <p class="cart-form_field">
+      <span>Your surname:</span>
+      <input type="text" required [(ngModel)]="user.surname" name="surname" class="cart-form_input" placeholder="enter your surname">
+    </p>
+    <p class="cart-form_field">
+      <span>Your e-mail:</span>
+      <input type="text" required [(ngModel)]="user.email" name="email" class="cart-form_input" placeholder="enter your name">
+    </p>
+    <button mat-button [disabled]="form.invalid" type="submit">Submit</button>
+  </form>
+</div>

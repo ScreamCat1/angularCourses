@@ -1,4 +1,12 @@
-.main {
+.mat-button.active {
+  background-color: lightblue;
+}
+
+.navigation {
   display: flex;
   justify-content: space-between;
+
+  margin-bottom: 30px;
+
+  background-color: blanchedalmond;
 }

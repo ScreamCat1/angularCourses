@@ -13,7 +13,7 @@ export class Product {
     public name: string,
     public price: number,
     public sizes: Array<string>,
-    public id?: string
+    public id: number
   ) {
     this.isAvailable = isAvailable || false;
   }

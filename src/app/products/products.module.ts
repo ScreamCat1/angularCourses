@@ -18,7 +18,7 @@ import { ProductService } from './services/product.service';
   ],
   declarations: [
     ProductComponent,
-    ProductListComponent,
+    ProductListComponent
   ],
   providers: [
     ProductService

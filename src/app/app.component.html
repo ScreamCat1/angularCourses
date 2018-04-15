@@ -1,5 +1,14 @@
+<nav class="navigation">
+  <div class="nav">
+    <a routerLink="/index" routerLinkActive="active" mat-button>Index</a>
+    <a routerLink="/products" routerLinkActive="active" mat-button>Products</a>
+    <a routerLink="/cart"  routerLinkActive="active" mat-button>Cart</a>
+  </div>
+  <div class="auth">
+    <a routerLink="/login" routerLinkActive="active" mat-button>Log In</a>
+  </div>
+</nav>
 <div class="main">
-  <app-product-list></app-product-list>
-  <app-cart></app-cart>
+  <router-outlet></router-outlet>
+  <router-outlet name="popup"></router-outlet>
 </div>
-<app-demo></app-demo>

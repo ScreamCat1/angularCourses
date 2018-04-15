@@ -1,0 +1,27 @@
+.cart-form {
+  width: 50%;
+  margin: 30px auto 60px;
+}
+
+.cart-form_field {
+    display: flex;
+    flex-direction: column;
+  }
+
+.cart-form_input {
+  border: 0;
+  border-bottom: 2px solid black;
+
+  display: block;
+  width: 80%;
+  margin-top: 15px;
+  height: 30px;
+
+  outline: none;
+
+  font-size: 24px;
+}
+
+.cart-form_input:focus {
+  border-color: lightblue;
+}

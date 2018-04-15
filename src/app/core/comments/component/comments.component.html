@@ -1,0 +1,22 @@
+<div class="comments-wrap">
+  <div>
+    <button mat-button (click)="toggleVisibilityCommnets()">x</button>
+    <p>Commnets for {{productId}}</p>
+    <ul>
+      <li *ngFor="let comment of comments">
+        <p>
+          <span class="comment-desc">
+            {{comment.name}}:
+          </span>
+          {{comment.text}}
+        </p>
+        <p>
+          <span class="comment-desc">
+            Rate:
+          </span>
+          {{comment.rate}}
+        </p>
+      </li>
+    </ul>
+  </div>
+</div>

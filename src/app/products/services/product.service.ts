@@ -11,4 +11,8 @@ export class ProductService {
       reject(`Couldn't load data`);
     } );
   }
+
+  changeProduct(product: Product) {
+    products[products.findIndex(p => p.id === product.id )] = product;
+  }
 }

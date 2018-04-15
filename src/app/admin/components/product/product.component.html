@@ -1,0 +1,22 @@
+<form action="" #form="ngForm" (ngSubmit)="saveChangedProduct()">
+<div>
+<span>name</span>
+  <mat-form-field>
+    <input matInput type="text" name="name" [(ngModel)]="product.name" required>
+  </mat-form-field>
+</div>
+<div>
+  <span>price</span>
+  <mat-form-field>
+    <input matInput type="number" name="price" [(ngModel)]="product.price" required>
+  </mat-form-field>
+</div>
+<div>
+  <span>isAviable</span>
+  <mat-radio-group [(ngModel)]="product.isAvailable" [value]="product.isAvailable" [ngModelOptions]="{standalone: true}" name="isAvailable">
+      <mat-radio-button value=true >Yes</mat-radio-button>
+      <mat-radio-button value=false >No</mat-radio-button>
+    </mat-radio-group>
+</div>
+<button mat-button type="submit">Save Changes</button>
+</form>

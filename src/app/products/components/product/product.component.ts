@@ -1,4 +1,5 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Output, Input, EventEmitter, OnDestroy } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { SelectedProduct } from '../../models/products';
 
@@ -7,13 +8,22 @@ import { SelectedProduct } from '../../models/products';
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
-export class ProductComponent {
+export class ProductComponent implements OnDestroy {
   @Input()product: SelectedProduct;
   @Output() addProduct = new EventEmitter();
 
   selectedSize: string;
   selectedColor: string;
   selectedQuantity = 1;
+
+  private hasShowComments = false;
+
+  constructor(private router: Router) {}
+
+  ngOnDestroy() {
+    console.log('destr');
+    this.router.navigate([{ outlets: { popup: null }}]);
+  }
 
   onBuy(product) {
     this.addProduct.emit({
@@ -32,6 +42,13 @@ export class ProductComponent {
 
   get isAviable(): boolean {
     return this.product.isAvailable;
+  }
+
+  navigateToProductInfo(): void {
+    this.hasShowComments
+    ? this.router.navigate([{ outlets: { popup: null }}])
+    : this.router.navigate([{ outlets: { popup: ['comments', this.product.id] }}]);
+    this.hasShowComments = !this.hasShowComments;
   }
 
 }

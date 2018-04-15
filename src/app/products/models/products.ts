@@ -14,7 +14,8 @@ export const products: Array<Product> = [
     isAvailable : undefined,
     name : 'NIKE DRI-FIT VICTORY',
     price : 65,
-    sizes : [ 's', 'm', 'l', 'xl', '2xl' ]
+    sizes : [ 's', 'm', 'l', 'xl', '2xl' ],
+    id: 1
   },
   {
     category : ProductCategoryType.J,
@@ -23,7 +24,8 @@ export const products: Array<Product> = [
     isAvailable : true,
     name : 'CLEVELAND CAVALIERS ICON EDITION AUTHENTIC ',
     price : 200,
-    sizes : [ 's', 'm', 'l', 'xl', '2xl', '3xl' ]
+    sizes : [ 's', 'm', 'l', 'xl', '2xl', '3xl' ],
+    id: 2
   },
   {
     category : ProductCategoryType.P,
@@ -32,7 +34,8 @@ export const products: Array<Product> = [
     isAvailable : false,
     name : 'NIKE PRO',
     price : 35,
-    sizes : [ 's', 'm', 'l' ]
+    sizes : [ 's', 'm', 'l' ],
+    id: 3
   },
   {
     category : ProductCategoryType.L,
@@ -41,7 +44,8 @@ export const products: Array<Product> = [
     isAvailable : true,
     name : 'NIKE DRI-FIT MEDALIST',
     price : 65,
-    sizes : [ 's', 'm', 'l', 'xl', '2xl' ]
+    sizes : [ 's', 'm', 'l', 'xl', '2xl' ],
+    id: 4
   },
   {
     category : ProductCategoryType.L,
@@ -50,7 +54,8 @@ export const products: Array<Product> = [
     isAvailable : false,
     name : 'NIKE ZONAL COOLING',
     price : 75,
-    sizes : [ 'l', 'xl', '2xl' ]
+    sizes : [ 'l', 'xl', '2xl' ],
+    id: 5
   },
   {
     category : ProductCategoryType.L,
@@ -59,7 +64,8 @@ export const products: Array<Product> = [
     isAvailable : true,
     name : 'NIKE LEGEND 2.0',
     price : 30,
-    sizes : [ 'l', 'xl', '2xl', '3xl', '4xl' ]
+    sizes : [ 'l', 'xl', '2xl', '3xl', '4xl' ],
+    id: 6
   },
   {
     category : ProductCategoryType.L,
@@ -68,6 +74,7 @@ export const products: Array<Product> = [
     isAvailable : true,
     name : 'NIKE TRAINING UTILITY',
     price : 45,
-    sizes : [ 's', 'm', 'xl', '2xl' ]
+    sizes : [ 's', 'm', 'xl', '2xl' ],
+    id: 7
   }
 ];

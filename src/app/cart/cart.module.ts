@@ -7,8 +7,9 @@ import { SharedModule } from '../shared/shared.module';
 
 import { CartService } from './shared/cart.service';
 
-import { CartComponent } from './cart/cart.component';
-import { CartItemComponent } from './cart-item/cart-item.component';
+import { CartComponent } from './components/cart/cart.component';
+import { CartItemComponent } from './components/cart-item/cart-item.component';
+import { CartFormComponent } from './components/cart-form/cart-form.component';
 
 @NgModule({
   imports: [
@@ -20,7 +21,8 @@ import { CartItemComponent } from './cart-item/cart-item.component';
   ],
   declarations: [
     CartComponent,
-    CartItemComponent
+    CartItemComponent,
+    CartFormComponent
   ],
   providers: [
     CartService

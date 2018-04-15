@@ -2,7 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 
-import { SelectedProduct } from './../../products/models/products';
+import { SelectedProduct } from './../../../products/models/products';
 
 @Component({
   selector: 'app-cart-item',

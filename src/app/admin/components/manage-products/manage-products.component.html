@@ -1,0 +1,5 @@
+<ul>
+  <li *ngFor="let product of products">
+    <app-admin-product [product]="product" (changeProduct)="changeProduct($event)"></app-admin-product>
+  </li>
+</ul>

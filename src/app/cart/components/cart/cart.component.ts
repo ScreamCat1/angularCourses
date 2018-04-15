@@ -1,14 +1,14 @@
-import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+import { Component } from '@angular/core';
 
-import { CartService } from './../shared/cart.service';
-import { OrdersService } from './../../orders/shared/orders.service';
+import { CartService } from './../../shared/cart.service';
+import { OrdersService } from './../../../orders/shared/orders.service';
 
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css']
 })
-export class CartComponent implements AfterViewInit {
+export class CartComponent {
   orderName = 'name';
   orderDirection = true;
 
@@ -18,15 +18,10 @@ export class CartComponent implements AfterViewInit {
     'quentity': false
   };
 
-  @ViewChild('elseWrapper') elseWrapper: ElementRef;
   constructor(
     private cartService: CartService,
     private ordersService: OrdersService,
   ) {}
-
-  ngAfterViewInit() {
-    this.elseWrapper.nativeElement.style.fontWeight = 'bold';
-  }
 
   onClick({ target: { innerText }  }): void {
     this.orderName = innerText.toLowerCase();

@@ -1,5 +1,5 @@
 
-import { CartComponent } from './../cart/cart/cart.component';
+import { CartComponent } from './../cart/components/cart/cart.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 

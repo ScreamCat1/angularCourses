@@ -3,7 +3,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 
 import { OrdersService } from '../shared/orders.service';
-import { CartItemComponent } from '../../cart/cart-item/cart-item.component';
+import { CartItemComponent } from '../../cart/components/cart-item/cart-item.component';
 import { SelectedProduct } from '../../products/models/products';
 
 @Component({
