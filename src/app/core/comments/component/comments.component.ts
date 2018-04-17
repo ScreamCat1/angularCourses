@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
-import { COMMENT } from './../models/product-comments';
+import { COMMENT, Comments } from './../models/product-comments';
 import { CommentsService } from './../shared/comments.service';
 
 @Component({
@@ -9,9 +9,11 @@ import { CommentsService } from './../shared/comments.service';
   templateUrl: './comments.component.html',
   styleUrls: ['./comments.component.css']
 })
-export class CommentsComponent implements OnInit {
-  comments: Array<COMMENT>;
+export class CommentsComponent implements OnInit, OnDestroy {
+  comments: Array<Comments>;
   productId: number;
+
+  private sub;
 
   constructor(
     private router: Router,
@@ -20,11 +22,15 @@ export class CommentsComponent implements OnInit {
 
   ngOnInit() {
     this.activeRouter.paramMap.subscribe(params => { this.productId = +params.get('id'); });
-    this.comments = this.commentsService.getComments();
+    this.sub = this.commentsService.getComments(this.productId)
+    .subscribe(comments => { this.comments = (<COMMENT>comments).comments; });
   }
 
   toggleVisibilityCommnets(): void {
     this.router.navigate([{ outlets: { popup: null }}])
   }
 
+  ngOnDestroy() {
+    this.sub.unsubscribe();
+  }
 }

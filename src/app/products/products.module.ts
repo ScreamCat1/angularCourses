@@ -8,6 +8,7 @@ import { ProductComponent } from './components/product/product.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 
 import { ProductService } from './services/product.service';
+import { ProductsPromiseService } from './services/products-promise.service';
 
 @NgModule({
   imports: [
@@ -21,7 +22,8 @@ import { ProductService } from './services/product.service';
     ProductListComponent
   ],
   providers: [
-    ProductService
+    ProductService,
+    ProductsPromiseService
   ],
   exports: [
     ProductListComponent

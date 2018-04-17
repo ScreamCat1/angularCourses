@@ -11,10 +11,12 @@ import { OrdersModule } from './orders/orders.module';
 import { SharedModule } from './shared/shared.module';
 import { ProductsModule } from './products/products.module';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { DemoComponent } from './demo-component/demo.component';
 import { IndexComponent } from './index/index.component';
+import { MyInterceptor } from './core/interceptors/my.interceptor.service';
 
 @NgModule({
   declarations: [
@@ -22,8 +24,13 @@ import { IndexComponent } from './index/index.component';
     DemoComponent,
     IndexComponent
   ],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: MyInterceptor, multi: true }
+
+  ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     BrowserAnimationsModule,
 
     CoreModule,

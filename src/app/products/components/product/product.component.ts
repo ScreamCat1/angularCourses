@@ -21,7 +21,6 @@ export class ProductComponent implements OnDestroy {
   constructor(private router: Router) {}
 
   ngOnDestroy() {
-    console.log('destr');
     this.router.navigate([{ outlets: { popup: null }}]);
   }
 

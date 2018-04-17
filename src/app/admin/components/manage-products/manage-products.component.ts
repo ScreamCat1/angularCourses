@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Product } from '../../../products/models/product.model';
-import { ProductService } from './../../../products/services/product.service';
+import { ProductsPromiseService } from './../../../products/services/products-promise.service';
 
 @Component({
   selector: 'app-manage-products',
@@ -11,14 +11,14 @@ import { ProductService } from './../../../products/services/product.service';
 export class ManageProductsComponent implements OnInit {
   products: Array<Product>;
 
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductsPromiseService) { }
 
   ngOnInit() {
     this.productService.getProducts().then(products => this.products = products);
   }
 
   changeProduct(product): void {
-    this.productService.changeProduct(product);
+    this.productService.changeProduct(product)
+      .then(response => { alert((<Product>response).name + ' was updated'); });
   }
-
 }

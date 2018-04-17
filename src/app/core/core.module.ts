@@ -10,7 +10,7 @@ import { GeneratorFactory, GeneratorService } from './services/generator.service
 import { AuthGuard } from './guards/auth.guard';
 
 import { AuthService } from './services/auth.service';
-
+import { MyInterceptor } from './interceptors/my.interceptor.service';
 import { LoginComponent } from './components/login/login.component';
 import { CommentsComponent } from './comments/component/comments.component';
 
@@ -29,7 +29,7 @@ import { CommentsComponent } from './comments/component/comments.component';
     LocalStorageService,
     ConfigOptionsService,
     { provide: CONSTANT_SERVICE, useValue:  ConstantValue },
-    { provide: GeneratorService, useFactory: GeneratorFactory },
+    { provide: GeneratorService, useFactory: GeneratorFactory }
   ],
   exports: [
     CommentsComponent
