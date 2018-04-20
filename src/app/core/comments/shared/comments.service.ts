@@ -2,9 +2,10 @@ import { HttpClient, HttpHeaders, HttpResponse, HttpErrorResponse } from '@angul
 import { Injectable } from '@angular/core';
 
 import { Observable } from 'rxjs/Observable';
+import { _throw } from 'rxjs/observable/throw';
+import { map, catchError } from 'rxjs/operators';
 
 import { COMMENT } from './../models/product-comments';
-import { catchError, map } from 'rxjs/operators';
 
 @Injectable()
 export class CommentsService {
@@ -21,8 +22,9 @@ export class CommentsService {
     };
 
     return this.http.get(url, options)
-    .pipe(
-      map(this.handleData));
+      .pipe(
+        map( this.handleData ),
+        catchError(this.handleError));
   }
 
   hasShowComments(): boolean {
@@ -35,8 +37,8 @@ export class CommentsService {
     return body || {};
   }
 
-  private handleError(error: HttpErrorResponse) {
-    console.log(error);
-    return new Error('error' + error);
-  }
+  private handleError(err: HttpErrorResponse) {
+    console.error(`Backend returned code ${err.status}, body was: ${err.error}`);
+    return _throw(`Backend returned code ${err.status}, body was: ${err.error}`);
+    }
 }

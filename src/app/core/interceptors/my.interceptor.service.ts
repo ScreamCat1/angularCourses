@@ -4,7 +4,6 @@ import {
 } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { map } from 'rxjs/operators';
-import { start } from 'repl';
 
 @Injectable()
 export class MyInterceptor implements HttpInterceptor {
@@ -13,7 +12,8 @@ export class MyInterceptor implements HttpInterceptor {
     return next.handle(req)
     .pipe(
       map((event: HttpEvent<any>) => {
-        if (event instanceof HttpResponse) {
+        if (event instanceof HttpResponse && event.url.indexOf('comments') >= 0) {
+          console.log(event);
           console.log(`response was recieved for ${(new Date().getTime() - startDate) * 0.001 } s`);
           return event;
         }
